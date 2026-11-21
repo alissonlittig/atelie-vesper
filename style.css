@@ -6,7 +6,7 @@
   --fd:"Bodoni Moda",Georgia,serif;--ft:"Hanken Grotesk",system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+html{scroll-padding-top:84px;scroll-padding-bottom:96px;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--blush);color:var(--ink);font:400 17px/1.6 var(--ft);padding-bottom:84px;text-wrap:pretty}
 svg{display:block;max-width:100%}a{color:inherit}
 h1,h2,h3{font-family:var(--fd);font-weight:400;line-height:1.04;margin:0;text-wrap:balance;letter-spacing:-.02em}
@@ -18,9 +18,9 @@ h2{font-size:clamp(2rem,7vw,3.6rem);max-width:17ch}
 :focus-visible{outline:3px solid var(--wine);outline-offset:3px;border-radius:6px}
 .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--m)}
 
-.top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px var(--m);background:rgb(241 218 211/.95);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.brand{margin-right:auto;text-decoration:none;font:400 1.9rem/1 var(--fd);letter-spacing:-.02em;display:flex;flex-direction:column}
-.brand small{font:600 .6rem/1 var(--ft);letter-spacing:.18em;text-transform:uppercase;margin-top:4px;color:var(--ink2)}
+.top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px var(--m);background:#F1DAD3;border-bottom:1px solid var(--line);}
+.brand{min-height:44px;margin-right:auto;text-decoration:none;font:400 1.9rem/1 var(--fd);letter-spacing:-.02em;display:flex;flex-direction:column}
+.brand small{font:600 .7rem/1 var(--ft);letter-spacing:.18em;text-transform:uppercase;margin-top:4px;color:var(--ink2)}
 .nav{display:none}
 .nav.open{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--blush);padding:8px var(--m) 20px;border-bottom:1px solid var(--line)}
 .nav a{padding:14px 0;text-decoration:none;font-weight:600;border-bottom:1px solid var(--line);min-height:48px}
@@ -75,7 +75,7 @@ h2{font-size:clamp(2rem,7vw,3.6rem);max-width:17ch}
 .drop::first-letter{font:400 4.2rem/.8 var(--fd);float:left;padding:8px 10px 0 0;color:var(--wine)}
 .sign{font:400 1.9rem/1.1 var(--fd)!important;margin-top:24px!important}
 .sign small{display:block;font:500 .85rem var(--ft);color:var(--ink2);margin-top:4px}
-.score{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.score{display:flex;align-items:center;gap:18px;margin-bottom:44px}
 .big{margin:0;font:400 clamp(4.5rem,18vw,8rem)/.9 var(--fd);letter-spacing:-.04em}
 .score p{margin:6px 0 0}.score small,.note{color:var(--ink2)}
 .rev{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
@@ -117,7 +117,7 @@ address{font:normal 400 1.5rem/1.3 var(--fd);margin:18px 0}
   :root{--m:56px}
   .burger{display:none}
   .nav{display:flex;gap:30px;margin-right:12px}
-  .nav a{border:0;padding:0;min-height:0;font-size:.98rem;text-decoration:none}
+  .nav a{border:0;padding:10px 0;min-height:0;font-size:.98rem;text-decoration:none}
   .nav a:hover{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
   .hero{grid-template-columns:6fr 5fr;align-items:center;gap:64px;padding-block:48px 90px;min-height:calc(100svh - 74px)}
   .stage{width:100%;margin:0}
@@ -132,3 +132,12 @@ address{font:normal 400 1.5rem/1.3 var(--fd);margin:18px 0}
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .js .rv{opacity:1;transform:none}
 }
+
+.btn-sm{order:2}.burger{order:3;flex:none}
+.rm{min-height:44px;padding:0 18px;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:inherit;font-size:.9rem;cursor:pointer}
+.rm[aria-pressed=true]{border-width:2px;font-weight:700}
+[data-rm] *,[data-rm] *::before,[data-rm] *::after{animation:none!important;transition-duration:.01ms!important}
+[data-rm] .rv{opacity:1!important;transform:none!important}
+.final :focus-visible,.sec-wine :focus-visible,.foot :focus-visible{outline-color:var(--blush)}
+.score{margin-bottom:56px}.sec-deep .score small,.sec-deep .note{color:#4A2A31}
+.stage{transform:translateZ(0);contain:layout paint}.nav.open{box-shadow:none}.hero-txt>*{animation-fill-mode:backwards}
